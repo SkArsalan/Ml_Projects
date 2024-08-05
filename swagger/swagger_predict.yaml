@@ -1,0 +1,36 @@
+swagger: '2.0'
+info:
+  title: Spam Detection API
+  description: API for detecting spam comments
+  version: 1.0.0
+host: 'localhost:5002'
+schemes:
+  - http
+basePath: '/'
+paths:
+  /predict:
+    post:
+      summary: Predict if the text is spam
+      description: This endpoint returns the prediction of whether the given text is spam.
+      parameters:
+        - in: body
+          name: body
+          description: Text to classify
+          required: true
+          schema:
+            type: object
+            properties:
+              text:
+                type: string
+                example: "This is a spam message"
+      responses:
+        200:
+          description: Prediction result
+          schema:
+            type: object
+            properties:
+              prediction:
+                type: integer
+                example: 1
+        400:
+          description: Invalid input

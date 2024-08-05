@@ -1,0 +1,20 @@
+swagger: '2.0'
+info:
+  title: Home API
+  description: API for the home page
+  version: 1.0.0
+host: 'localhost:5002'
+schemes:
+  - http
+basePath: '/'
+paths:
+  /home:
+    get:
+      summary: Home Page
+      description: This endpoint returns the home page.
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: string
+            example: "<h1>This is Home Page</h1>"
